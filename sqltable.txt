@@ -1,0 +1,69 @@
+table and database create as par mention table name should be same and datatype also
+
+
+
+mysql> use gaana
+Database changed
+mysql> show tables
+    -> ;
++-----------------+
+| Tables_in_gaana |
++-----------------+
+| album           |
+| artist          |
+| song            |
+| user            |
++-----------------+
+4 rows in set (0.08 sec)
+
+mysql> desc album;
++--------------+-------------+------+-----+-------------------+-------------------+
+| Field        | Type        | Null | Key | Default           | Extra             |
++--------------+-------------+------+-----+-------------------+-------------------+
+| aid          | int         | NO   | PRI | NULL              | auto_increment    |
+| title        | varchar(20) | YES  |     | NULL              |                   |
+| artistid     | int         | YES  |     | NULL              |                   |
+| duration     | int         | YES  |     | NULL              |                   |
+| created_time | timestamp   | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| thumbnail    | varchar(40) | YES  |     | NULL              |                   |
++--------------+-------------+------+-----+-------------------+-------------------+
+6 rows in set (0.04 sec)
+
+mysql> desc song;
++--------------+--------------+------+-----+-------------------+-------------------+
+| Field        | Type         | Null | Key | Default           | Extra             |
++--------------+--------------+------+-----+-------------------+-------------------+
+| sid          | int          | NO   | PRI | NULL              | auto_increment    |
+| title        | varchar(20)  | YES  |     | NULL              |                   |
+| aid          | int          | YES  |     | NULL              |                   |
+| artistid     | int          | YES  |     | NULL              |                   |
+| duration     | int          | YES  |     | NULL              |                   |
+| created_time | timestamp    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| songfile     | varchar(200) | YES  |     | NULL              |                   |
++--------------+--------------+------+-----+-------------------+-------------------+
+7 rows in set (0.05 sec)
+
+mysql> desc user;
++--------------+-------------+------+-----+-------------------+-------------------+
+| Field        | Type        | Null | Key | Default           | Extra             |
++--------------+-------------+------+-----+-------------------+-------------------+
+| uid          | int         | NO   | PRI | NULL              | auto_increment    |
+| fname        | varchar(20) | YES  |     | NULL              |                   |
+| lname        | varchar(20) | YES  |     | NULL              |                   |
+| email        | varchar(40) | YES  |     | NULL              |                   |
+| pass         | varchar(40) | YES  |     | NULL              |                   |
+| isActive     | int         | YES  |     | 1                 |                   |
+| created_time | timestamp   | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++--------------+-------------+------+-----+-------------------+-------------------+
+7 rows in set (0.01 sec)
+
+mysql> desc artist;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| artistid  | int         | NO   | PRI | NULL    | auto_increment |
+| fname     | varchar(20) | YES  |     | NULL    |                |
+| lname     | varchar(20) | YES  |     | NULL    |                |
+| thumbnail | varchar(40) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
