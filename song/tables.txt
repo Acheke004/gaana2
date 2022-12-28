@@ -1,0 +1,11 @@
+create table user (uid int  primary key auto_increment,fname varchar(20),
+lname varchar(20),email varchar(40),pass varchar(40),isActive int default 1,created_time TIMESTAMP default current_Timestamp);
+
+create table album (aid int primary key,title varchar(20),
+artistid int,duration int,created_time TIMESTAMP default current_Timestamp);
+
+create table song (sid int primary key,title varchar(20),
+aid int ,artistid int,thumbnail varchar(40),duration int ,created_time TIMESTAMP default current_Timestamp);
+
+create table artist(artistid int primary key,fname varchar(20),
+lname varchar(20),thumbnaila varchar(40));
